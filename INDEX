@@ -1,0 +1,12 @@
+chisq.out.test	Chi-squared test for outliers
+cochran.test	Cochran test for outlying variance
+dixon.test	Dixon test for outliers
+grubbs.test	Grubbs test for outliers
+pcochran	p-values for Cochran test
+pdixon		p-values for Dixon test
+pgrubbs		p-values for Grubbs test
+qcochran	Cochran test critical values
+qdixon		Dixon test critical values
+qgrubbs		Gibson test critical values
+qtable		Interpolate tabularized distribution to produce a quantile
+scores		Scores of data
