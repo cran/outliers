@@ -5,19 +5,22 @@
   Performs a chisquared test for detection of one outlier in a vector.
 }
 \usage{
-chisq.out.test(x, opposite = FALSE)
+chisq.out.test(x, variance=var(x), opposite = FALSE)
 }
 \arguments{
   \item{x}{ a numeric vector for data values. }
+  \item{variance}{ known variance of population. if not given, estimator from sample is taken,
+but there is not so much sense in such test (it is similar to z-scores) }
   \item{opposite}{  a logical indicating whether you want to check not the value with 
 largest difference from the mean, but opposite (lowest, if most suspicious is highest etc.)}
 }
 \details{
 
 This function performs a simple test for one outlier, based on chisquared distribution of squared
-differences between data and sample mean. It is not recommended today for routine use,
-because several more powerful tests are implemented (see other functions mentioned below). 
-It was discussed by Dixon (1950) for the first time, as one of the tests taken into account.
+differences between data and sample mean. It assumes known variance of population. 
+It is rather not recommended today for routine use, because several more powerful 
+tests are implemented (see other functions mentioned below). 
+It was discussed by Dixon (1950) for the first time, as one of the tests taken into account by him.
 
 }
 \value{
@@ -39,7 +42,7 @@ Dixon, W.J. (1950). Analysis of extreme values. Ann. Math. Stat. 21, 4, 488-506.
 \author{ Lukasz Komsta }
 \note{ 
 
-This test is known to reject only extreme outliers.
+This test is known to reject only extreme outliers, if no known variance is specified.
 
 }
 

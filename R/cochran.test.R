@@ -15,6 +15,9 @@ df <- mean(data)
 }
 else
 {
+ if (missing(data)) 
+        data <- environment(object)
+
 bn<-as.character(attr(terms(object),"variables")[-1])
 by.factor<-as.factor(data[[bn[2]]])
 vars <- tapply(data[[bn[1]]],by.factor,var)
