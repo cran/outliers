@@ -6,8 +6,7 @@ function (x, opposite = FALSE, logical = FALSE)
     else if (is.data.frame(x)) 
         sapply(x, outlier, opposite = opposite, logical = logical)
     else {
-
-	if (xor(((x[length(x)] - mean(x)) < (mean(x) - x[1])),opposite)) 
+	if (xor(((max(x) - mean(x)) < (mean(x) - min(x))),opposite)) 
 		{
 			if (!logical) min(x)
 			else x == min(x)
