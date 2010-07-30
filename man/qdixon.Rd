@@ -27,8 +27,6 @@ by Rorabacher (1991). Continuity is reached due to smart interpolation using \co
 By now, numerical procedure to obtain these values for n>3 is not known.
 
 }
-
-}
 \value{
 
 Critical value or p-value (vector).
