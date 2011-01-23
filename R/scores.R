@@ -42,7 +42,7 @@ else if (ty == 3) {
 	res <- x
 	Q1 <- quantile(x,0.25)
 	Q3 <- quantile(x,0.75)
-	res[x > Q1 & res < Q3] <- 0
+	res[x >= Q1 & res <= Q3] <- 0
 	res[x < Q1] <- (res[x < Q1]-Q1)/IQR(x)
 	res[x > Q3] <- (res[x > Q3]-Q3)/IQR(x)
 	if (is.na(lim)) res

@@ -22,7 +22,7 @@ from the mean, it gives smallest and vice versa)}
 A vector of value(s) with largest difference from the mean.
 
 }
-\author{ Lukasz Komsta }
+\author{ Lukasz Komsta, corrections by Markus Graube }
 \seealso{ \code{\link{rm.outlier}}}
 \examples{
 set.seed(1234)

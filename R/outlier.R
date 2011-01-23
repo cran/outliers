@@ -6,15 +6,15 @@ function (x, opposite = FALSE, logical = FALSE)
     else if (is.data.frame(x)) 
         sapply(x, outlier, opposite = opposite, logical = logical)
     else {
-	if (xor(((max(x) - mean(x)) < (mean(x) - min(x))),opposite)) 
+	if (xor(((max(x,na.rm=TRUE) - mean(x,na.rm=TRUE)) < (mean(x,na.rm=TRUE) - min(x,na.rm=TRUE))),opposite)) 
 		{
-			if (!logical) min(x)
-			else x == min(x)
+			if (!logical) min(x,na.rm=TRUE)
+			else x == min(x,na.rm=TRUE)
 		}
 		else 
 		{
-			if (!logical) max(x)
-			else x == max(x)
+			if (!logical) max(x,na.rm=TRUE)
+			else x == max(x,na.rm=TRUE)
 		}
 	} 
 }

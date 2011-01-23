@@ -40,7 +40,7 @@ A vector of scores, probabilities, or logical vector.
 Schiffler, R.E (1998). Maximum Z scores and outliers. Am. Stat. 42, 1, 79-80.
 
 }
-\author{ Lukasz Komsta }
+\author{ Lukasz Komsta, corrections by Alan Richter }
 \seealso{ \code{\link{mad}}, \code{\link{IQR}}, \code{\link{grubbs.test}}, }
 \examples{
 set.seed(1234)
