@@ -20,6 +20,7 @@ pval = 1-pgrubbs(g,n,type=11);
 method <- "Grubbs test for two opposite outliers"
 
 alt = paste(x[1],"and",x[n],"are outliers")
+outliers <- c(x[1], x[n])
 
 }
 
@@ -30,12 +31,13 @@ if (xor(((x[n] - mean(x)) < (mean(x) - x[1])),opposite)) {
 alt = paste("lowest value",x[1],"is an outlier");
 o <- x[1];
 d <- x[2:n];
+outliers <- c(x[1]);
 }
 else{
 alt = paste("highest value",x[n],"is an outlier");
 o <- x[n];
 d <- x[1:(n-1)];
-
+outliers <- c(x[n]);
 }
 
 g <- abs(o - mean(x))/sd(x)
@@ -54,10 +56,12 @@ else
 if (xor(((x[n] - mean(x)) < (mean(x) - x[1])),opposite)) {
 alt = paste("lowest values",x[1],",",x[2],"are outliers");
 u <- var(x[3:n])/var(x)*(n-3)/(n-1);
+outliers <- c(x[1], x[2]);
 }
 else{
 alt = paste("highest values",x[n-1],",",x[n],"are outliers");
 u <- var(x[1:(n-2)])/var(x)*(n-3)/(n-1)
+outliers <- c(x[n-1], x[n]);
 }
 
 g <- NULL
@@ -76,7 +80,7 @@ if (two.sided) {
 
 RVAL <- list(statistic = c(G = g, U= u),
 alternative = alt, p.value = pval, method = method, 
-    data.name = DNAME)
+    data.name = DNAME, outliers = outliers)
 class(RVAL) <- "htest"
 return(RVAL)
 
